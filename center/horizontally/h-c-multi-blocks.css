@@ -1,0 +1,15 @@
+/*多个上下排列的block元素水平居中*/
+.parent{
+  background-color: red;
+  width: 50%;
+}
+.child1{
+  background-color:yellow;
+  width: 30%;
+  margin: 0 auto;
+}
+.child2{
+  background-color:grey;
+  width: 30%;
+  margin: 0 auto;
+}

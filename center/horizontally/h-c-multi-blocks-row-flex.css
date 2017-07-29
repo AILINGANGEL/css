@@ -1,0 +1,15 @@
+/*多个块级元素排成一行水平居中:flex 方案*/
+.parent{
+  background-color: red;
+  width: 50%;
+  display: flex;
+  justify-content: center
+}
+.child1{
+  background-color:yellow;
+  width: 30%;
+}
+.child2{
+  background-color:grey;
+  width: 30%;
+}
