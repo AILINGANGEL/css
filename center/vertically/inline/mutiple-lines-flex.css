@@ -1,0 +1,22 @@
+/* use flex layout to achieve this */
+.parent{
+  text-align: center;
+  background-color: red;
+  height: 100px;
+  padding: 50px;
+}
+.child{
+  background-color: black;
+  padding: 10px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50px;
+  width: 150px;  
+}
+.child a{
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+}

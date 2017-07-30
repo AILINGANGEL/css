@@ -1,0 +1,22 @@
+/* use the vertical-align attribute in table layout to achieve this */
+.parent{
+  text-align: center;
+  background-color: red;
+  height: 100px;
+  padding: 50px;
+  diplay: table;
+}
+.child{
+  background-color: black;
+  padding: 10px;
+  text-align: left;
+  display: table-cell;
+  height: 50px;
+  width: 150px;
+  vertical-align: middle;
+}
+.child a{
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+}

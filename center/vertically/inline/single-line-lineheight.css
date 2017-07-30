@@ -1,0 +1,13 @@
+/*for block elements ,height=line-height*/
+.parent{
+  text-align: center;
+  background-color: red;
+  height: 100px;
+  padding: 50px;
+  line-height: 100px;
+}
+.parent a{
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}

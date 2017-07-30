@@ -1,0 +1,13 @@
+/* padding-top = padding-bottom */
+.parent{
+  text-align: center;
+  background-color: red;
+  height: 100px;
+  padding: 50px;
+}
+.parent a{
+  background-color: black;
+  color: white;
+  padding: 40px 10px;
+  text-decoration: none;
+}
