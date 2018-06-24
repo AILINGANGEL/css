@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>QQ邮箱布局</title>
+    <style type="text/css">
+    .header {
+        height: 50px;
+        background-color: red;
+    }
+
+    .sidebar {
+        width: 50px;
+        /*向左浮动*/
+        float: left;
+        height: 500px;
+        background-color: green;
+    }
+
+    .content {
+        background-color: yellow;
+        height: 500px;
+        /*宽度填满剩下的空间*/
+        width: auto;
+        /*留出sidebar的位置*/
+        margin-left: 50px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="sidebar"></div>
+    <div class="content"></div>
+</body>
+
+</html>
