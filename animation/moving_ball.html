@@ -1,0 +1,91 @@
+<html>
+<style>
+    .ball {
+        width: 20px;
+        height: 20px;
+        background: red;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 10;
+        bottom: 40px;
+        left: 40px;
+    }
+    
+    .run-top-right {
+        left: 600px;
+        bottom: 400px;
+        transition: left 3s linear 0s, bottom 3s cubic-bezier(0, .42, .32, 1.13) 0s;
+    }
+    
+    .run-bottom-left {
+        left: 40px;
+        bottom: 40px;
+        transition: left 3s cubic-bezier(.72, 0, 1, .35) 0s, bottom 3s linear 0s;
+    }
+    /* //定义动画的流程
+    .run-top-right {
+        animation: run-right 3s 0.4s 1 linear, run-top 3s 0.4s 1 cubic-bezier(0, .42, .32, 1.13);
+        animation-fill-mode: forwards;
+    }
+    
+    .run-bottom-left {
+        animation: run-left 3s 0.4s 1 cubic-bezier(.72, 0, 1, .35), run-bottom 3s 0.4s 1 linear;
+        animation-fill-mode: backwards;
+    }
+    
+    @keyframes run-top {
+        0% {
+            bottom: 40px;
+        }
+        100% {
+            bottom: 400px;
+        }
+    }
+    
+    @keyframes run-right {
+        0% {
+            left: 40px;
+        }
+        100% {
+            left: 600px;
+        }
+    }
+    
+    @keyframes run-left {
+        0% {
+            left: 600px;
+        }
+        100% {
+            left: 40px;
+        }
+    }
+    
+    @keyframes run-bottom {
+        0% {
+            bottom: 400px;
+        }
+        100% {
+            bottom: 40px;
+        }
+    } */
+</style>
+
+<body>
+    <div class="ball"></div>
+    <button class="move">move</button>
+    <script>
+        const moveBtn = document.querySelector('.move');
+        moveBtn.onclick = function move() {
+            const ball = document.querySelector('.ball');
+            if (ball.classList.contains('run-top-right')) {
+                ball.classList.remove('run-top-right');
+                ball.classList.add('run-bottom-left');
+            } else {
+                ball.classList.remove('run-bottom-left');
+                ball.classList.add('run-top-right');
+            }
+        }
+    </script>
+</body>
+
+</html>
