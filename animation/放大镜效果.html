@@ -1,0 +1,91 @@
+<html>
+<style>
+    #lens {
+        position: absolute;
+        opacity: 0.8;
+        background: white;
+        width: 50px;
+        height: 50px;
+    }
+    
+    #big {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        position: relative
+    }
+    
+    #big-img-wrapper {
+        position: absolute;
+    }
+</style>
+
+<body>
+    <div style="position: relative;">
+        <div id="lens"></div>
+        <img id="target" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1593169271581&di=42c858a4971ec542940912f651ca575a&imgtype=0&src=http%3A%2F%2Fwww.people.com.cn%2Fmediafile%2Fpic%2F20140722%2F60%2F5036559042574976028.jpg">
+    </div>
+    <div id="big">
+        <div id="big-img-wrapper">
+            <img id="big-img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1593169271581&di=42c858a4971ec542940912f651ca575a&imgtype=0&src=http%3A%2F%2Fwww.people.com.cn%2Fmediafile%2Fpic%2F20140722%2F60%2F5036559042574976028.jpg" width="100%">
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            const target = document.querySelector('#target');
+            const lens = document.querySelector('#lens');
+            const bigImgWraper = document.querySelector('#big-img-wrapper');
+            const lensWidth = 50;
+            const lensHeight = 50;
+            const scale = 4;
+            const targetWidth = target.clientWidth;
+            const targetHeight = target.clientHeight;
+            bigImgWraper.style.width = targetWidth * scale + 'px';
+            bigImgWraper.style.height = targetHeight * scale + 'px';
+            target.addEventListener('mousemove', function(e) {
+                const {
+                    offsetX,
+                    offsetY
+                } = e;
+
+                const {
+                    posx,
+                    posy
+                } = sycLensPos(offsetX, offsetY, targetWidth, targetHeight);
+                syncBigImgPos(posx, posy);
+            })
+
+            function sycLensPos(offsetX, offsetY, targetWidth, targetHeight) {
+                let posx, posy;
+                if (offsetX - lensWidth / 2 < 0) {
+                    posx = 0;
+                } else if (offsetX + lensWidth / 2 > targetWidth) {
+                    posx = targetWidth - lensWidth;
+                } else {
+                    posx = offsetX - lensWidth / 2;
+                }
+
+                if (offsetY - lensHeight / 2 < 0) {
+                    posy = 0;
+                } else if (offsetY + lensHeight / 2 > targetHeight) {
+                    posy = targetHeight - lensHeight;
+                } else {
+                    posy = offsetY - lensHeight / 2;
+                }
+                lens.style.left = posx + 'px';
+                lens.style.top = posy + 'px';
+                return {
+                    posx,
+                    posy
+                };
+            }
+
+            function syncBigImgPos(posx, posy) {
+                bigImgWraper.style.left = -posx * scale + 'px';
+                bigImgWraper.style.top = -posy * scale + 'px';
+            }
+        }
+    </script>
+</body>
+
+</html
